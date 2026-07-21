@@ -89,5 +89,6 @@
     }
     .cart-promocode{
         justify-content: start;
+          align-self: flex-start;
     }
 }

@@ -59,7 +59,7 @@ if(cartItems[item._id]>0){
             <button>PROCEED TO CHECKOUT</button>
 
         </div>
-        <div className="cart-promocde">
+        <div className="cart-promocode">
           <div>
             <p>If you have a promo code, Enter it here</p>
             <div className="cart-promocode-input">
