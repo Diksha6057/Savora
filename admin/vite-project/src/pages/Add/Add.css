@@ -12,6 +12,14 @@
 .add-img-upload{
     width: 120px;
 }
+.add-img-upload label {
+    width: 120px;
+    cursor: pointer;
+}
+.add-img-upload label img {
+    width: 100%;
+}
+
 .add-product-name, .add-product-description{
     width: max(40%,280px);
 }
