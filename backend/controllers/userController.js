@@ -8,7 +8,7 @@ const loginUser = async (req, res) => {
 
 }
 const createToken=(id)=>{
-    return jwt.sign({id},)
+    return jwt.sign({id},process.env.JWT_SECRET)
 }
 
 //register user
@@ -33,16 +33,19 @@ if(password.length<8)
 //hashing user password
 const salt=await bcrypt.genSalt(10)
 const hashedPassword=await bcrypt.hash(password,salt);
-const newUser=new userModel({
-    name:matchMedia,
-    email:email,
-    password:hashedPassword
-})
+const newUser = new userModel({
+    name: name,
+    email: email,
+    password: hashedPassword
+});
 const user=await newUser.save()
+const token=createToken(user._id)
+res.json({success:true,token});
 
 }
 catch(error){
-
+console.log(error);
+res.json({success:false,message:"Error"})
 }
 }
 
