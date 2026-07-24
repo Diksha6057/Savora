@@ -37,6 +37,8 @@ const StoreContextProvider = (props) => {
 
     return totalAmount;
 }
+
+//integrating login fun even on reloading
 useEffect(()=>{
     if(localStorage.getItem("token"))
     {
