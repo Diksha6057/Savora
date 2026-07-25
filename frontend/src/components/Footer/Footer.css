@@ -32,6 +32,12 @@
     width: 40px;
     margin-right: 15px;
 }
+.logof{
+    width: 230px;
+    height: auto;
+    object-fit: contain;
+    margin-top: -60px;
+}
 .footer hr{
     width: 100%;
     height: 2px;
