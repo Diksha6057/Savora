@@ -5,6 +5,7 @@ import { useState } from 'react'
 import {toast} from "react-toastify"
 import { useEffect } from 'react'
 import { assets } from '../../assets/assets'
+
 const Orders = ({url}) => {
   const [orders,setOrders]=useState([]);
   const fetchAllOrders=async()=>{
@@ -41,9 +42,16 @@ const Orders = ({url}) => {
                   }
                 })}
               </p>
+              <p className='order-item-name'>{order.address.firstName+ " "+order.address.lastName}</p>
+              <div className='order-item-address'>
+                <p>{order.address.street+","}</p>
+                <p>{order.address.city+", "+order.address.state+", "+order.address.country+", "+order.address.zipcode}</p>
+              </div>
+              <p className='order-item-phone'>{order.address.phone}</p>
             </div>
-            </div>
-
+            <p>Items:{order.items.length}</p>
+            <p>${order.amount}</p>
+          </div>
         ))}
       </div>
     </div>
