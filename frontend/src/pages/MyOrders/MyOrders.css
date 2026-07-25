@@ -35,6 +35,18 @@
     cursor: pointer;
     color: #454545;
 }
+.track{
+    transition: all 0.2s ease;
+}
+
+.track:hover {
+    background-color: tomato;
+    color: white;
+    transform: translateY(-2px);
+    box-shadow: 0 4px 8px rgba(0,0,0,0.15);
+    cursor: pointer;
+}
+
 @media(max-width:900px)
 {
     .my-orders-order{
