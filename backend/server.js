@@ -1,5 +1,5 @@
 import express from "express"
-import cors from "cors"
+import cors from "cors"//middleware
 import { connectDB } from "./config/db.js"
 import foodRouter from "./routes/foodRoute.js"
 import userRouter from "./routes/userRoute.js"
@@ -7,7 +7,7 @@ import 'dotenv/config'
 import cartRouter from "./routes/cartRoute.js"
 import orderRouter from "./routes/orderRoute.js"
 //app config
-const app=express()
+const app=express()//express application created in app to define routes,middleware,server behaviour
 const port=4000
 
 //middleware
@@ -29,6 +29,10 @@ app.get("/",(req,res)=>
     res.send("API Working")
 })
 
-app.listen(port,()=>{
-    console.log(`Server started on http://localhost:${port}`)
-})
+if (!process.env.VERCEL) {
+  app.listen(port, () => {
+    console.log(`Server started on http://localhost:${port}`);
+  });
+}
+
+export default app;
